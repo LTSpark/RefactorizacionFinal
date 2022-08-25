@@ -1,7 +1,5 @@
 package chess.infraestructure;
 
-import chess.infraestructure.ChessPanel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

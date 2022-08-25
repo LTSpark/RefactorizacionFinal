@@ -1,6 +1,5 @@
 package chess.common;
 
-import chess.common.ChessGamePiece;
 import chess.domain.King;
 import chess.infraestructure.BoardSquare;
 import chess.infraestructure.ChessGameBoard;
