@@ -1,9 +1,12 @@
-import java.util.ArrayList;
+package chess;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.Color;
-import javax.swing.JPanel;
-import java.awt.GridLayout;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 // -------------------------------------------------------------------------
 /**
  * The panel that represents the Chess game board. Contains a few methods that
@@ -14,14 +17,17 @@ import java.awt.GridLayout;
  * @author Danielle Bushrow (dbushrow)
  * @version 2010.11.17
  */
-public class ChessGameBoard extends JPanel{
+public class ChessGameBoard extends JPanel implements Serializable {
+
+    private static final long serialVersionUID = 1905122023950251207L;
+
     private BoardSquare[][] chessCells;
-    private BoardListener   listener;
+    private transient BoardListener listener;
     // ----------------------------------------------------------
     /**
      * Returns the entire board.
      *
-     * @return BoardSquare[][] the chess board
+     * @return ChessApplication.BoardSquare[][] the chess board
      */
     public BoardSquare[][] getCells(){
         return chessCells;
@@ -39,10 +45,10 @@ public class ChessGameBoard extends JPanel{
     }
     // ----------------------------------------------------------
     /**
-     * Gets the BoardSquare at row 'row' and column 'col'.
+     * Gets the ChessApplication.BoardSquare at row 'row' and column 'col'.
      * @param row the row to look at
      * @param col the column to look at
-     * @return BoardSquare the square found, or null if it does not exist
+     * @return ChessApplication.BoardSquare the square found, or null if it does not exist
      */
     public BoardSquare getCell( int row, int col ){
         if ( validateCoordinates( row, col ) ){
@@ -73,8 +79,8 @@ public class ChessGameBoard extends JPanel{
      *
      * @return ArrayList<GamePiece> the pieces
      */
-    public ArrayList<ChessGamePiece> getAllWhitePieces(){
-        ArrayList<ChessGamePiece> whitePieces = new ArrayList<ChessGamePiece>();
+    public List<ChessGamePiece> getAllWhitePieces(){
+        ArrayList<ChessGamePiece> whitePieces = new ArrayList<>();
         for ( int i = 0; i < 8; i++ ){
             for ( int j = 0; j < 8; j++ ){
                 if ( chessCells[i][j].getPieceOnSquare() != null
@@ -92,8 +98,8 @@ public class ChessGameBoard extends JPanel{
      *
      * @return ArrayList<GamePiece> the pieces
      */
-    public ArrayList<ChessGamePiece> getAllBlackPieces(){
-        ArrayList<ChessGamePiece> blackPieces = new ArrayList<ChessGamePiece>();
+    public List<ChessGamePiece> getAllBlackPieces(){
+       ArrayList<ChessGamePiece> blackPieces = new ArrayList<>();
         for ( int i = 0; i < 8; i++ ){
             for ( int j = 0; j < 8; j++ ){
                 if ( chessCells[i][j].getPieceOnSquare() != null
@@ -107,7 +113,7 @@ public class ChessGameBoard extends JPanel{
     }
     // ----------------------------------------------------------
     /**
-     * Create a new ChessGameBoard object.
+     * Create a new ChessApplication.ChessGameBoard object.
      */
     public ChessGameBoard(){
         this.setLayout( new GridLayout( 8, 8, 1, 1 ) );
@@ -148,13 +154,10 @@ public class ChessGameBoard extends JPanel{
             }
         }
         repaint();
-        //revalidate();
-        // only the combination of these two calls work...*shrug*
+
     }
-    /**
-     * (Re)initializes this ChessGameBoard to its default layout with all 32
-     * pieces added.
-     */
+
+
     public void initializeBoard(){
         resetBoard( false );
         for ( int i = 0; i < chessCells.length; i++ ){

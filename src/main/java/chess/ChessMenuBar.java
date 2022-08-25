@@ -1,6 +1,9 @@
-import java.awt.Component;
-import java.awt.event.*;
+package chess;
+
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 // -------------------------------------------------------------------------
 /**
  * Represents the north menu-bar that contains various controls for the game.
@@ -14,7 +17,7 @@ public class ChessMenuBar
     extends JMenuBar{
     // ----------------------------------------------------------
     /**
-     * Create a new ChessMenuBar object.
+     * Create a new ChessApplication.ChessMenuBar object.
      */
     public ChessMenuBar(){
         String[] menuCategories = { "File", "Options", "Help" };

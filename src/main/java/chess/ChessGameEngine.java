@@ -1,7 +1,9 @@
-import java.util.ArrayList;
-import java.awt.Color;
-import javax.swing.JOptionPane;
+package chess;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.util.List;
 // -------------------------------------------------------------------------
 /**
  * This is the backend behind the Chess game. Handles the turn-based aspects of
@@ -21,11 +23,11 @@ public class ChessGameEngine{
     private King           king2;
     // ----------------------------------------------------------
     /**
-     * Create a new ChessGameEngine object. Accepts a fully-created
-     * ChessGameBoard. (i.e. all components rendered)
+     * Create a new ChessApplication.ChessGameEngine object. Accepts a fully-created
+     * ChessApplication.ChessGameBoard. (i.e. all components rendered)
      *
      * @param board
-     *            the reference ChessGameBoard
+     *            the reference ChessApplication.ChessGameBoard
      */
     public ChessGameEngine( ChessGameBoard board ){
         firstClick = true;
@@ -83,7 +85,7 @@ public class ChessGameEngine{
      * @return boolean true if the player does have legal moves, false otherwise
      */
     public boolean playerHasLegalMoves( int playerNum ){
-        ArrayList<ChessGamePiece> pieces;
+        List<ChessGamePiece> pieces;
         if ( playerNum == 1 ){
             pieces = board.getAllWhitePieces();
         }
@@ -128,7 +130,7 @@ public class ChessGameEngine{
         }
     }
     /**
-     * Determines if the requested King is in check.
+     * Determines if the requested ChessApplication.King is in check.
      *
      * @param checkCurrent
      *            if true, will check if the current king is in check if false,
@@ -167,7 +169,6 @@ public class ChessGameEngine{
         else
         {
             board.resetBoard( false );
-            // System.exit(0);
         }
     }
     /**

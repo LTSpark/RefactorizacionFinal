@@ -1,5 +1,7 @@
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+package chess;
+
+import javax.swing.*;
+import java.io.Serializable;
 // -------------------------------------------------------------------------
 /**
  * Represents a cell on the chess board. Holds a game piece.
@@ -10,14 +12,17 @@ import javax.swing.JPanel;
  * @version 2010.11.17
  */
 public class BoardSquare
-    extends JPanel{
+    extends JPanel implements Serializable {
+
+    private static final long serialVersionUID = 1905122041950251207L;
+
     private int            row;
     private int            col;
-    private ChessGamePiece piece;
+    private transient ChessGamePiece piece;
     private JLabel         imageLabel;
     // ----------------------------------------------------------
     /**
-     * Create a new BoardSquare object.
+     * Create a new ChessApplication.BoardSquare object.
      *
      * @param row
      *            the row
@@ -34,7 +39,7 @@ public class BoardSquare
         updateImage();
     }
     /**
-     * Updates the image for this BoardSquare.
+     * Updates the image for this ChessApplication.BoardSquare.
      */
     private void updateImage(){
         if ( imageLabel != null ){

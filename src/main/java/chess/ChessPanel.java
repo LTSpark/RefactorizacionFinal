@@ -1,5 +1,8 @@
-import java.awt.*;
+package chess;
+
 import javax.swing.*;
+import java.awt.*;
+import java.io.Serializable;
 // -------------------------------------------------------------------------
 /**
  * The main panel of the Chess game.
@@ -10,16 +13,18 @@ import javax.swing.*;
  * @version 2010.11.17
  */
 public class ChessPanel
-    extends JPanel{
+    extends JPanel implements Serializable {
+
+    private static final long serialVersionUID = 1905122041950251207L;
     private ChessMenuBar    menuBar;
     private ChessGameBoard  gameBoard;
     private ChessGameLog    gameLog;
     private ChessGraveyard  playerOneGraveyard;
     private ChessGraveyard  playerTwoGraveyard;
-    private ChessGameEngine gameEngine;
+    private transient ChessGameEngine gameEngine;
     // ----------------------------------------------------------
     /**
-     * Create a new ChessPanel object.
+     * Create a new ChessApplication.ChessPanel object.
      */
     public ChessPanel(){
         this.setLayout( new BorderLayout() );
@@ -40,7 +45,7 @@ public class ChessPanel
     /**
      * Gets the logger object for use in other classes.
      * 
-     * @return ChessGameLog the ChessGameLog object
+     * @return ChessApplication.ChessGameLog the ChessApplication.ChessGameLog object
      */
     public ChessGameLog getGameLog(){
         return gameLog;
@@ -49,7 +54,7 @@ public class ChessPanel
     /**
      * Gets the board object for use in other classes.
      * 
-     * @return ChessGameBoard the ChessGameBoard object
+     * @return ChessApplication.ChessGameBoard the ChessApplication.ChessGameBoard object
      */
     public ChessGameBoard getGameBoard(){
         return gameBoard;
@@ -58,7 +63,7 @@ public class ChessPanel
     /**
      * Gets the game engine object for use in other classes
      * 
-     * @return ChessGameEngine the ChessGameEngine object
+     * @return ChessApplication.ChessGameEngine the ChessApplication.ChessGameEngine object
      */
     public ChessGameEngine getGameEngine(){
         return gameEngine;
@@ -69,7 +74,7 @@ public class ChessPanel
      * 
      * @param whichPlayer
      *            the number of the player (1 or 2)
-     * @return ChessGraveyard the graveyard requested
+     * @return ChessApplication.ChessGraveyard the graveyard requested
      */
     public ChessGraveyard getGraveyard( int whichPlayer ){
         if ( whichPlayer == 1 ){

@@ -1,8 +1,10 @@
-import javax.swing.ImageIcon;
+package chess;
+
+import javax.swing.*;
 import java.util.ArrayList;
 // -------------------------------------------------------------------------
 /**
- * Represents a Pawn game piece. Unique in that it can move two locations on its
+ * Represents a ChessApplication.Pawn game piece. Unique in that it can move two locations on its
  * first turn and therefore requires a new 'notMoved' variable to keep track of
  * its turns.
  *
@@ -16,7 +18,7 @@ public class Pawn
     private boolean notMoved;
     // ----------------------------------------------------------
     /**
-     * Create a new Pawn object.
+     * Create a new ChessApplication.Pawn object.
      *
      * @param board
      *            the board to create the pawn on
@@ -70,7 +72,7 @@ public class Pawn
      */
     @Override
     protected ArrayList<String> calculatePossibleMoves( ChessGameBoard board ){
-        ArrayList<String> moves = new ArrayList<String>();
+        ArrayList<String> moves = new ArrayList<>();
         if ( isPieceOnScreen() ){
             int currRow =
                 getColorOfPiece() == ChessGamePiece.WHITE
@@ -126,18 +128,18 @@ public class Pawn
     public ImageIcon createImageByPieceType(){
         if ( getColorOfPiece() == ChessGamePiece.WHITE ){
             return new ImageIcon(
-                getClass().getResource("chessImages/WhitePawn.gif")
+                getClass().getResource("/chessImages/WhitePawn.gif")
             );            
         }
         else if ( getColorOfPiece() == ChessGamePiece.BLACK ){
             return new ImageIcon(
-                getClass().getResource("chessImages/BlackPawn.gif")
+                getClass().getResource("/chessImages/BlackPawn.gif")
             );            
         }
         else
         {
             return new ImageIcon(
-                getClass().getResource("chessImages/default-Unassigned.gif")
+                getClass().getResource("/chessImages/default-Unassigned.gif")
             );           
         }
     }

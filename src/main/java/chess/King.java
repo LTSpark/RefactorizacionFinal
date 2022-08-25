@@ -1,8 +1,10 @@
-import javax.swing.ImageIcon;
+package chess;
+
+import javax.swing.*;
 import java.util.ArrayList;
 // -------------------------------------------------------------------------
 /**
- * Represents a King game piece.
+ * Represents a ChessApplication.King game piece.
  *
  * @author Ben Katz (bakatz)
  * @author Myles David II (davidmm2)
@@ -13,7 +15,7 @@ public class King
     extends ChessGamePiece{
     // ----------------------------------------------------------
     /**
-     * Create a new King object.
+     * Create a new ChessApplication.King object.
      *
      * @param board
      *            the board to create the king on
@@ -45,7 +47,7 @@ public class King
         ArrayList<String> southMoves = calculateSouthMoves( board, 1 );
         ArrayList<String> eastMoves = calculateEastMoves( board, 1 );
         ArrayList<String> westMoves = calculateWestMoves( board, 1 );
-        ArrayList<String> allMoves = new ArrayList<String>();
+        ArrayList<String> allMoves = new ArrayList<>();
         allMoves.addAll( northEastMoves );
         allMoves.addAll( northWestMoves );
         allMoves.addAll( southWestMoves );
@@ -57,14 +59,14 @@ public class King
         return allMoves;
     }
     /**
-     * Determines if this King is checked.
+     * Determines if this ChessApplication.King is checked.
      *
      * @param board
      *            the board to check on
      * @return true if checked, false if not checked
      */
     public boolean isChecked( ChessGameBoard board ){
-        return getCurrentAttackers( board ).size() > 0;
+        return !(getCurrentAttackers( board ).isEmpty());
     }
     /**
      * Creates an icon for this piece depending on the piece's color.
@@ -75,18 +77,18 @@ public class King
     public ImageIcon createImageByPieceType(){
         if ( getColorOfPiece() == ChessGamePiece.WHITE ){
             return new ImageIcon(
-                getClass().getResource("chessImages/WhiteKing.gif")
+                getClass().getResource("/chessImages/WhiteKing.gif")
             );            
         }
         else if ( getColorOfPiece() == ChessGamePiece.BLACK ){
             return new ImageIcon(
-                getClass().getResource("chessImages/BlackKing.gif" )
+                getClass().getResource("/chessImages/BlackKing.gif" )
             );            
         }
         else
         {
             return new ImageIcon(
-                getClass().getResource("chessImages/default-Unassigned.gif" )
+                getClass().getResource("/chessImages/default-Unassigned.gif" )
             );            
         }
     }
