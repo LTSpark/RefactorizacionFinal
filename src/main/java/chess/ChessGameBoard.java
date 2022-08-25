@@ -1,5 +1,7 @@
 package chess;
 
+import chess.entity.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;

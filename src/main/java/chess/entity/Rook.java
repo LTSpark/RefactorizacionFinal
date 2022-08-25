@@ -1,4 +1,7 @@
-package chess;
+package chess.entity;
+
+import chess.ChessGameBoard;
+import chess.ChessGamePiece;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -13,7 +16,7 @@ import java.util.Map;
  * @author Danielle Bushrow (dbushrow)
  * @version 2010.11.17
  */
-public class Rook extends ChessGamePiece{
+public class Rook extends ChessGamePiece {
 	protected Map<Integer, String> iconsMap;
 	/**
 	 * Create a new ChessApplication.Rook object.
@@ -27,7 +30,7 @@ public class Rook extends ChessGamePiece{
 	 * @param color
 	 *            either GamePiece.WHITE, BLACK, or UNASSIGNED
 	 */
-	public Rook( ChessGameBoard board, int row, int col, int color ){
+	public Rook(ChessGameBoard board, int row, int col, int color ){
 		super( board, row, col, color );
 	}
 	/**

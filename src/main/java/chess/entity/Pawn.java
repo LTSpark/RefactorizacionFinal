@@ -1,4 +1,7 @@
-package chess;
+package chess.entity;
+
+import chess.ChessGameBoard;
+import chess.ChessGamePiece;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -14,7 +17,7 @@ import java.util.ArrayList;
  * @version 2010.11.17
  */
 public class Pawn
-    extends ChessGamePiece{
+    extends ChessGamePiece {
     private boolean notMoved;
     // ----------------------------------------------------------
     /**
@@ -29,7 +32,7 @@ public class Pawn
      * @param color
      *            either GamePiece.WHITE, BLACK, or UNASSIGNED
      */
-    public Pawn( ChessGameBoard board, int row, int col, int color ){
+    public Pawn(ChessGameBoard board, int row, int col, int color ){
         super( board, row, col, color, true );
         notMoved = true;
         possibleMoves = calculatePossibleMoves( board );

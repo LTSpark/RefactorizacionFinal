@@ -1,4 +1,7 @@
-package chess;
+package chess.entity;
+
+import chess.ChessGameBoard;
+import chess.ChessGamePiece;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -11,7 +14,7 @@ import java.util.ArrayList;
  * @author Danielle Bushrow (dbushrow)
  * @version 2010.11.17
  */
-public class Bishop extends ChessGamePiece{
+public class Bishop extends ChessGamePiece {
 	/**
 	 * Creates a new ChessApplication.Bishop object.
 	 * 
@@ -24,7 +27,7 @@ public class Bishop extends ChessGamePiece{
 	 * @param color
 	 *			either GamePiece.WHITE, BLACK, or UNASSIGNED
 	 */
-	public Bishop( ChessGameBoard board, int row, int col, int color ){
+	public Bishop(ChessGameBoard board, int row, int col, int color ){
 		super( board, row, col, color );
 	}
 	/**

@@ -1,5 +1,7 @@
 package chess;
 
+import chess.entity.King;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -19,7 +21,7 @@ public class ChessGameEngine{
     private boolean        firstClick;
     private int            currentPlayer;
     private ChessGameBoard board;
-    private King           king1;
+    private King king1;
     private King           king2;
     // ----------------------------------------------------------
     /**

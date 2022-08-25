@@ -1,4 +1,7 @@
-package chess;
+package chess.entity;
+
+import chess.ChessGameBoard;
+import chess.ChessGamePiece;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -12,7 +15,7 @@ import java.util.ArrayList;
  * @version 2010.11.17
  */
 public class King
-    extends ChessGamePiece{
+    extends ChessGamePiece {
     // ----------------------------------------------------------
     /**
      * Create a new ChessApplication.King object.
@@ -26,7 +29,7 @@ public class King
      * @param color
      *            either GamePiece.WHITE, BLACK, or UNASSIGNED
      */
-    public King( ChessGameBoard board, int row, int col, int color ){
+    public King(ChessGameBoard board, int row, int col, int color ){
         super( board, row, col, color, false );
     }
     /**
