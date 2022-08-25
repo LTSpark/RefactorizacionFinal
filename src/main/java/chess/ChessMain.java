@@ -1,5 +1,7 @@
 package chess;
 
+import chess.infraestructure.ChessPanel;
+
 import javax.swing.*;
 // -------------------------------------------------------------------------
 /**

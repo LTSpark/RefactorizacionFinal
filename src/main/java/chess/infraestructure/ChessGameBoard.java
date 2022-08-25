@@ -1,6 +1,7 @@
-package chess;
+package chess.infraestructure;
 
-import chess.entity.*;
+import chess.common.ChessGamePiece;
+import chess.domain.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -134,7 +135,7 @@ public class ChessGameBoard extends JPanel implements Serializable {
     public void resetBoard ( boolean addAfterReset ){
         chessCells = new BoardSquare[8][8];
         this.removeAll();
-        if ( getParent() instanceof ChessPanel ){
+        if ( getParent() instanceof ChessPanel){
             ( (ChessPanel)getParent() ).getGraveyard( 1 ).clearGraveyard();
             ( (ChessPanel)getParent() ).getGraveyard( 2 ).clearGraveyard();
             ( (ChessPanel)getParent() ).getGameLog().clearLog();

@@ -1,7 +1,7 @@
-package chess.entity;
+package chess.domain;
 
-import chess.ChessGameBoard;
-import chess.ChessGamePiece;
+import chess.common.ChessGamePiece;
+import chess.infraestructure.ChessGameBoard;
 
 import javax.swing.*;
 import java.util.ArrayList;

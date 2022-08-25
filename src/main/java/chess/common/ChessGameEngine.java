@@ -1,6 +1,10 @@
-package chess;
+package chess.common;
 
-import chess.entity.King;
+import chess.common.ChessGamePiece;
+import chess.domain.King;
+import chess.infraestructure.BoardSquare;
+import chess.infraestructure.ChessGameBoard;
+import chess.infraestructure.ChessPanel;
 
 import javax.swing.*;
 import java.awt.*;

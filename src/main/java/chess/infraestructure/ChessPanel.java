@@ -1,4 +1,8 @@
-package chess;
+package chess.infraestructure;
+
+import chess.common.ChessGameEngine;
+import chess.common.ChessGameLog;
+import chess.common.ChessGraveyard;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,10 +20,10 @@ public class ChessPanel
     extends JPanel implements Serializable {
 
     private static final long serialVersionUID = 1905122041950251207L;
-    private ChessMenuBar    menuBar;
-    private ChessGameBoard  gameBoard;
-    private ChessGameLog    gameLog;
-    private ChessGraveyard  playerOneGraveyard;
+    private ChessMenuBar menuBar;
+    private ChessGameBoard gameBoard;
+    private ChessGameLog gameLog;
+    private ChessGraveyard playerOneGraveyard;
     private ChessGraveyard  playerTwoGraveyard;
     private transient ChessGameEngine gameEngine;
     // ----------------------------------------------------------

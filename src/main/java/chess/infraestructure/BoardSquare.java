@@ -1,4 +1,6 @@
-package chess;
+package chess.infraestructure;
+
+import chess.common.ChessGamePiece;
 
 import javax.swing.*;
 import java.io.Serializable;

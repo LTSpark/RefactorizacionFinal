@@ -1,4 +1,7 @@
-package chess;
+package chess.common;
+
+import chess.infraestructure.ChessGameBoard;
+import chess.infraestructure.ChessPanel;
 
 import javax.swing.*;
 import java.awt.*;
